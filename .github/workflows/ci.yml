@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Node.js CI with Docker
 
 on:
   push:
@@ -22,3 +22,7 @@ jobs:
 
       - name: Test with ESLint
         run: npm run lint
+
+      # New step: Build Docker image
+      - name: Build Docker image
+        run: docker build -t my-node-app .
